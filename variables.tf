@@ -1,32 +1,36 @@
 variable "env" {
-    default = "dev"
-    description = "Name of the environment"
+  default     = "dev"
+  description = "Name of the environment"
 }
 
 variable "app_name" {
-    default = "mlflow-server"
+  default = "mlflow-server"
 }
 
 variable "region" {
-    default = "us-east-1"
+  default = "us-east-1"
 }
 
 variable "ecs_service_name" {
-    default = "mlflow-server-ecs"
+  default = "mlflow-server-ecs"
 }
 
 variable "ecs_task_name" {
-    default = "mlflow-server-ECStaks"
+  default = "mlflow-server-ECStaks"
 }
 
 variable "cidr" {
-    default = "10.0.0.0/25"
-    description = "Cidr block for the VPC"
+  default     = "10.0.0.0/25"
+  description = "Cidr block for the VPC"
 }
 
 variable "private_cidr_a" {
-    default = "10.0.0.16/28"
-  
+  default = "10.0.0.16/28"
+
+}
+
+variable "private_cidr_b" {
+  default = "10.0.0.16/28"
 }
 
 variable "db_cidr_a" {
