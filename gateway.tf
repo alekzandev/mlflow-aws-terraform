@@ -15,7 +15,7 @@ resource "aws_eip" "nat_ip_b" {
 
 resource "aws_nat_gateway" "mlflow_nat_a" {
   allocation_id = aws_eip.nat_ip_a.id
-  subnet_id     = aws_subnet.publc_subnet_a.id
+  subnet_id     = aws_subnet.public_subnet_a.id
 
   depends_on = [aws_internet_gateway.main]
 
@@ -24,7 +24,7 @@ resource "aws_nat_gateway" "mlflow_nat_a" {
 
 resource "aws_nat_gateway" "mlflow_nat_b" {
   allocation_id = aws_eip.nat_ip_b.id
-  subnet_id     = aws_subnet.publc_subnet_b.id
+  subnet_id     = aws_subnet.public_subnet_b.id
 
   depends_on = [aws_internet_gateway.main]
 

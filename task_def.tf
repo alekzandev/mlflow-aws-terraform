@@ -1,9 +1,9 @@
 resource "aws_ecs_task_definition" "mlflow" {
   execution_role_arn = aws_iam_role.ecs_mlflow.arn
-  family       = var.ecs_task_name
-  memory       = "3072"
-  cpu          = "1024"
-  network_mode = "awsvpc"
+  family             = var.ecs_task_name
+  memory             = "3072"
+  cpu                = "1024"
+  network_mode       = "awsvpc"
   requires_compatibilities = [
     "FARGATE",
   ]
