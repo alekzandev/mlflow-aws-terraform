@@ -8,3 +8,16 @@ mlruns
 .terraform.lock.hcl
 .terraform.tfstate
 .terraform.tfstate.backup
+
+# .env
+.env
+
+# Python
+*.pyc
+*.pyo
+*.pyd
+**/__pycache__/**
+
+# Jupyter Notebook
+**/.ipynb_checkpoints/**
+

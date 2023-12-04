@@ -11,7 +11,7 @@ resource "aws_db_instance" "mlflow-db" {
   publicly_accessible    = true
   db_subnet_group_name   = aws_db_subnet_group.db_subnet_group.name
   skip_final_snapshot    = true
-  storage_encrypted      = aws_route_table_association.private_subnet_association_a
+  storage_encrypted      = true
 
   depends_on = [aws_internet_gateway.main]
   tags       = local.tags
