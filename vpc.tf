@@ -21,7 +21,7 @@ resource "aws_subnet" "private_subnet_b" {
 }
 
 resource "aws_db_subnet_group" "db_subnet_group" {
-  name       = "$(var.app_name)-$(var.env)-db-subnet-group"
+  name       = "${var.app_name}-${var.env}-db-subnet-group"
   subnet_ids = [aws_subnet.private_subnet_a.id, aws_subnet.private_subnet_b.id]
   tags       = local.tags
 }

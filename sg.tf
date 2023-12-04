@@ -17,7 +17,7 @@ resource "aws_security_group_rule" "db_ingress" {
 
 # ECS -> RDS
 resource "aws_security_group" "ecs_sg" {
-    name = "$(var.env)-$(var.app_name)-ecs-sg"
+    name = "${var.env}-${var.app_name}-ecs-sg"
     description = "Contains all the rules for the ECS service"
     vpc_id = aws_vpc.main.id
     tags = local.tags
@@ -47,7 +47,7 @@ resource "aws_security_group_rule" "ecs_ingress" {
 
 # RDS <- ECS
 resource "aws_security_group" "rds_sg" {
-    name = "$(var.env)-$(var.app_name)-rds-sg"
+    name = "${var.env}-${var.app_name}-rds-sg"
     description = "Allow inbound traffic from ECS"
     vpc_id = aws_vpc.main.id
     tags = local.tags
@@ -88,6 +88,6 @@ resource "aws_security_group_rule" "egress_lb_ecs" {
     from_port = 0
     to_port = 0
     protocol = "-1"
-    cidr_blocks = [var.var.internet_cidr]
+    cidr_blocks = [var.internet_cidr]
     security_group_id = aws_security_group.lb_sg.id
 }

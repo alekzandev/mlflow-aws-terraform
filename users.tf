@@ -18,14 +18,14 @@ resource "aws_iam_access_key" "mlflow_s3" {
 }
 
 resource "aws_ssm_parameter" "mlflow_key_id" {
-  name  = "/$(var.app_name)/$(var.env)/AWS_ACCESS_KEY_ID"
+  name  = "/${var.app_name}/${var.env}/AWS_ACCESS_KEY_ID"
   type  = "SecureString"
   value = aws_iam_access_key.mlflow_s3.id
   tags  = local.tags
 }
 
 resource "aws_ssm_parameter" "mlflow_key_secrest" {
-  name  = "/$(var.app_name)/$(var.env)/AWS_SECRET_ACCESS_KEY"
+  name  = "/${var.app_name}/${var.env}/AWS_SECRET_ACCESS_KEY"
   type  = "SecureString"
   value = aws_iam_access_key.mlflow_s3.secret
   tags  = local.tags

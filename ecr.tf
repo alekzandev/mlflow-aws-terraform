@@ -1,5 +1,5 @@
 resource "aws_ecr_repository" "mlflow_ecr" {
-  name                 = "$(var.app_name)-$(var.env)-image"
+  name                 = "${var.app_name}-${var.env}-image"
   image_tag_mutability = "MUTABLE"
 
   image_scanning_configuration {
