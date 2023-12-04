@@ -16,7 +16,7 @@ variable "ecs_service_name" {
 }
 
 variable "ecs_task_name" {
-  default = "mlflow-server-ECStaks"
+  default = "mlflow-server-ecs-task"
 }
 
 variable "cidr" {

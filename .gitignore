@@ -21,3 +21,12 @@ mlruns
 # Jupyter Notebook
 **/.ipynb_checkpoints/**
 
+# virtualenvs
+**/.venv/
+/**venv/
+
+# MLflow artifacts and DB
+**/mlruns/
+**/mlruns.db
+**/*s3*
+**/*ec2*

@@ -35,11 +35,11 @@ resource "aws_ecs_task_definition" "mlflow" {
         name = var.ecs_task_name
         portMappings = [
           {
-            #appProtocol   = "http"
+            appProtocol   = "http"
             containerPort = 8080
             hostPort      = 8080
             name          = "${var.ecs_task_name}-8080-tcp"
-            #protocol      = "tcp"
+            protocol      = "tcp"
           },
         ]
         secrets = [
