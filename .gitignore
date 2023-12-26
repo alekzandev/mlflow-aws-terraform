@@ -8,6 +8,7 @@ mlruns
 .terraform.lock.hcl
 .terraform.tfstate
 .terraform.tfstate.backup
+*.tfstate
 
 # .env
 .env
@@ -30,3 +31,5 @@ mlruns
 **/mlruns.db
 **/*s3*
 **/*ec2*
+
+**/mlflow**

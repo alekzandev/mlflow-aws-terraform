@@ -19,8 +19,8 @@ resource "aws_db_instance" "mlflow-db" {
 
 resource "random_password" "db_password" {
   length           = 16
-  special          = true
-  override_special = "!#$%&*()-_=+[]{}<>:?"
+  special          = false
+  override_special = "!#$&*()-_=+[]{}<>:?"
 }
 
 resource "aws_ssm_parameter" "db_password" {
@@ -40,8 +40,8 @@ resource "aws_ssm_parameter" "db_url" {
 
 resource "random_password" "mlflow_password" {
   length           = 16
-  special          = true
-  override_special = "!#$%&*()-_=+[]{}<>:?"
+  special          = false
+  override_special = "!#$&*()-_=+[]{}<>:?"
 }
 
 resource "aws_ssm_parameter" "mlflow_password" {
